@@ -4,6 +4,7 @@ import { Link as RouterLink } from "react-router-dom";
 import { withRouter } from "react-router";
 import { useQuery } from "react-query";
 import fetch from "./fetch";
+import './style.css'
 
 function Film(props) {
     const filmId = props.match.params.filmId;
@@ -18,10 +19,12 @@ function Film(props) {
     }
     if (status === "error") return <p>Error :(</p>;
     return (
-        <div className='charakter'>
+        <div>
+            <div className='cos'>
             <Typography variant="h2">{data.title}</Typography>
+
             <Typography variant="body1">{data.opening_crawl}</Typography>
-            <br />
+            <br /></div>
             <Typography variant="h4">Characters</Typography>
             {data.characters.map((character) => {
                 const characterUrlParts = character.split("/").filter(Boolean);

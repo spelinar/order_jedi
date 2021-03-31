@@ -3,6 +3,7 @@ import { Typography, Link } from "@material-ui/core";
 import { Link as RouterLink } from "react-router-dom";
 import { useQuery } from "react-query";
 import fetch from "./fetch";
+import './style.css'
 
 export default function Films(props) {
     const { data, status, error } = useQuery("films", () =>
@@ -17,7 +18,7 @@ export default function Films(props) {
     }
 
     return (
-        <div className='charakter'>
+        <div className='fil'>
             <Typography variant="h2">Films</Typography>
             {data.results.map((film) => {
                 const filmUrlParts = film.url.split("/").filter(Boolean);
